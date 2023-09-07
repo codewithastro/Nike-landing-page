@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/images/first.png">
+    <link rel="stylesheet" href="contact-style.css">
+    <title>Contact Us</title>
+</head>
+    <body>
+        <div class="container">
+          <form onsubmit="sendEmail(); reset(); return false;">
+            <h3>Contact Us</h3>
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <input type="text" id="phone" placeholder="Phone Number" required>
+            <textarea id="message" rows="4" placeholder="How can we help you?"></textarea>
+            <button type="Submit">Send</button>
+          </form>
+        </div>
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
+        <script>
+          function sendEmail() {
+            Email.send({
+            Host : "smtp.elasticemail.com",
+            Username : "aserhello5@gmail.com",
+            Password : "96DA986FB6EF92C4DBBE1015A35011CC4CC0ddff",
+            To : 'aserhello5@gmail.com',
+            From : document.getElementById("email").value,
+            Subject : "This is the subject",
+            Body : "And this is the body"
+          }).then(
+          message => alert(message)
+          );
+          }
+        </script>
+    </body>
+</html>
