@@ -45,10 +45,6 @@ header{
     height: 80px;
 }
 
-.navigation{
-    padding-right: 320px;
-}
-
 .navigation a{
     padding-left: 70px;
     font-size: 20px;
@@ -59,6 +55,15 @@ header{
 
 .navigation a:hover{
     color: var(--color);
+}
+
+.social-icons{
+    color: var(--text);
+    font-size: 24px;
+}
+
+.social-icons i{
+    padding-left: 30px;
 }
 
 .main{
@@ -222,109 +227,12 @@ header{
 
 /*Responsive Design*/
 
-/*4K Screens*/
-@media (min-width:2560px) {
-    header{
-        padding: 20px 160px;
-    }
-    .logo{
-        width: 160px;
-        height: 160px;
-    }
-    .navigation{
-        padding-right: 600px;
-    }
-    .navigation a{
-        padding-left: 140px;
-        font-size: 40px;
-    }
-    .main{
-        margin: 160px;
-    }
-    .main h3{
-        font-size: 72px;
-        padding-bottom: 10px;
-    }
-    .main h1{
-        font-size: 120px;
-        padding-bottom: 10px;
-    }
-    .main h2{
-        font-size: 84px;
-        padding-bottom: 60px;
-    }
-    .main a{
-        padding: 20px 40px;
-        border-radius: 80px;
-        font-size: 32px;
-        font-weight: 700;
-    }
-    .main img{
-        width: 1040px;
-        height: 1040px;
-        margin: -520px -80px 0px 0px;
-    }
-    .shoeses{
-        margin: 120px 40px 0px 80px;
-    }
-    .shoeses div{
-        margin-left: 80px;
-        border: 10px solid var(--color);
-        border-radius: 60px;
-    }    
-    .shoeses img{
-        width: 240px;
-        height: 240px;
-    }
-    .about h3{
-        font-size: 72px;
-        padding-bottom: 40px;
-    }
-    .about p{
-        font-size: 64px;
-    }
-    .title{
-        font-size: 72px;
-        padding-bottom: 40px;
-    }
-    .collection{
-        margin: 80px 200px 80px 40px;
-    }
-    .collection div{
-        border-radius: 40px;
-        margin-left: 120px;
-        border: 6px solid var(--color);
-        box-shadow: 20px 20px 16px black;
-    }
-    .collection div:hover{
-        border: 6px solid var(--hover-color);
-    }
-    .collection img{
-        margin: 0px 40px;
-        width: 560px;
-        height: 560px;
-    }
-    .collection p{
-        font-size: 32px;
-        width: 620px;
-    }
-    .collection h5{
-        font-size: 44px;
-        padding: 120px 0px 40px;
-    }
-    .footer p{
-        font-size: 44px;
-        padding: 40px 0px;
-    }
-}
-/*4K Screens*/
-
 /*Laptop L*/
 @media (min-width: 1440px) {
-    .navigation{
-        padding-right: 360px;
-    }
     .navigation a{
+        font-size: 22px;
+    }
+    .social-icons{
         font-size: 22px;
     }
 }
@@ -332,20 +240,17 @@ header{
 
 /*Laptop S*/
 @media (max-width:1024px) {
-    header{
-        padding: 15px 80px;
-    }
     .logo{
-        width: 70px;
-        height: 70px;
-    }
-    .navigation{
-        padding-right: 200px;
+        width: 60px;
+        height: 60px;
     }
     .navigation a{
         padding-left: 50px;
         font-size: 18px;
         font-weight: 600;
+    }
+    .social-icons{
+        font-size: 16px;
     }
     .main{
         margin: 80px;
@@ -448,7 +353,29 @@ header{
 /*Laptop S*/
 
 /*Tablet Screen*/
-/*later*/
+@media (min-width: 768px) {
+    #menu-btn{
+        display: inline-block;
+    }
+    #menu-btn.fa-times{
+        transform: rotate(180deg);
+    }
+    .navigation{
+        position: absolute;
+        top:99%; left:0; right:0;
+        border-top: .1rem solid var(--light-white);
+        border-bottom: .1rem solid var(--light-white);
+        background-color: var(--light-bg);
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+    .navigation.active{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+    .navigation a{
+        display: block;
+        margin:2rem;
+     }
+}
 /*Tablet Screen*/
 
 /*Mobile Screen*/
